@@ -1,0 +1,14 @@
+/Users/elias/Projects/PadLabN1/PadLabN1/bin/Debug/netcoreapp2.2/PadLabN1.deps.json
+/Users/elias/Projects/PadLabN1/PadLabN1/bin/Debug/netcoreapp2.2/PadLabN1.runtimeconfig.json
+/Users/elias/Projects/PadLabN1/PadLabN1/bin/Debug/netcoreapp2.2/PadLabN1.runtimeconfig.dev.json
+/Users/elias/Projects/PadLabN1/PadLabN1/bin/Debug/netcoreapp2.2/PadLabN1.dll
+/Users/elias/Projects/PadLabN1/PadLabN1/bin/Debug/netcoreapp2.2/PadLabN1.pdb
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.csprojAssemblyReference.cache
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.csproj.CoreCompileInputs.cache
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.RazorAssemblyInfo.cache
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.RazorAssemblyInfo.cs
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.AssemblyInfoInputs.cache
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.AssemblyInfo.cs
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.RazorTargetAssemblyInfo.cache
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.dll
+/Users/elias/Projects/PadLabN1/PadLabN1/obj/Debug/netcoreapp2.2/PadLabN1.pdb

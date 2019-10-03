@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{CFD77201-904D-42C0-93BC-E412B66953A2}|Default">
+  <MonoDevelop.Ide.ItemProperties.PadLabN1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PadLabN1/Services/DbDataManager.cs">
+    <Files>
+      <File FileName="PadLabN1/Entities/PadLabN1DbContext.cs" Line="1" Column="1" />
+      <File FileName="PadLabN1/Entities/Post.cs" />
+      <File FileName="PadLabN1/Entities/Sub.cs" />
+      <File FileName="PadLabN1/Services/DbDataManager.cs" Line="21" Column="46" />
+      <File FileName="PadLabN1/Controllers/MainController.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PadLabN1" expanded="True">
+            <Node name="PadLabN1" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Entities" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="DbDataManager.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
