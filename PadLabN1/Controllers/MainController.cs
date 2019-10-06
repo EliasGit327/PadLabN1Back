@@ -16,7 +16,12 @@ namespace PadLabN1.Controllers
     [ApiController]
     public class MainController : Controller
     {
-        public MainController(IDataManager dataManager, PadLabN1DbContext database, IHubContext<MessageHub> messageHubContext)
+        public MainController
+        (
+            IDataManager dataManager,
+            PadLabN1DbContext database,
+            IHubContext<MessageHub> messageHubContext
+        )
         {
             _database = database;
             _dataManager = dataManager;
@@ -26,7 +31,7 @@ namespace PadLabN1.Controllers
         private readonly PadLabN1DbContext _database;
         private readonly IDataManager _dataManager;
         private IHubContext<MessageHub> _messageHubContext;
-        
+
         [HttpGet("users")]
         public ActionResult<IEnumerable<string>> GetAllUsers()
         {
@@ -34,10 +39,10 @@ namespace PadLabN1.Controllers
 
             if (users == null)
                 return NotFound();
-            
+
             return Ok(users);
         }
-        
+
         [HttpGet("userswithsubs")]
         public ActionResult<IEnumerable<string>> GetAllUsersWithSubs()
         {
@@ -45,23 +50,23 @@ namespace PadLabN1.Controllers
 
             if (users == null)
                 return NotFound();
-            
+
             return Ok(users);
         }
 
-        
+
         [HttpGet("userswithsubs/{userName}")]
         public ActionResult<IEnumerable<string>> GetUserWithSubs(string userName)
         {
-            var user = _dataManager.GetAllUsersWithSubs().FirstOrDefault( u => u.Name == userName );
+            var user = _dataManager.GetAllUsersWithSubs().FirstOrDefault(u => u.Name == userName);
 
-            
+
             if (user == null)
                 return NotFound();
-            
+
             return Ok(user);
         }
-        
+
 
         [HttpGet("users/{id:int}")]
         public ActionResult<IEnumerable<string>> GetSpecificUser(int id)
@@ -74,9 +79,8 @@ namespace PadLabN1.Controllers
             }
 
             return BadRequest();
-
         }
-        
+
         [HttpGet("subs/{userName}")]
         public ActionResult<IEnumerable<string>> GetPostsBySubs(string userName)
         {
@@ -88,9 +92,8 @@ namespace PadLabN1.Controllers
             }
 
             return BadRequest();
-
         }
-        
+
         [HttpGet("userbyname/{userName}")]
         public ActionResult<IEnumerable<string>> GetUserByName(string userName)
         {
@@ -102,7 +105,6 @@ namespace PadLabN1.Controllers
             }
 
             return NotFound();
-
         }
 
 
@@ -117,15 +119,13 @@ namespace PadLabN1.Controllers
             }
 
             return BadRequest();
-
-
         }
 
 
         [HttpPost("users")]
         public ActionResult<IEnumerable<string>> RegisterUser([FromBody] UserForCreation user)
         {
-            if(user == null)
+            if (user == null)
             {
                 return BadRequest();
             }
@@ -146,72 +146,70 @@ namespace PadLabN1.Controllers
         [HttpDelete("posts/{postId:int}")]
         public ActionResult<IEnumerable<string>> DeletePost(int postId)
         {
-            if(postId == null)
+            if (postId == null)
             {
                 return BadRequest();
             }
 
-            if (_dataManager.TryDeletePost( postId ))
+            if (_dataManager.TryDeletePost(postId))
             {
                 return Ok();
             }
 
             return BadRequest();
         }
-        
+
         [HttpDelete("users/{postId:int}")]
         public ActionResult<IEnumerable<string>> DeleteUser(int postId)
         {
-            if(postId == null)
+            if (postId == null)
             {
                 return BadRequest();
             }
 
-            if (_dataManager.TryDeleteUser( postId ))
+            if (_dataManager.TryDeleteUser(postId))
             {
                 return Ok();
             }
 
             return BadRequest();
         }
-        
-        
+
+
         [HttpGet("users/{id:int}/name")]
         public ActionResult<IEnumerable<string>> GetUserName(int id)
         {
-            var name = _dataManager.GetAuthorName( id );
-            if ( name != null )
+            var name = _dataManager.GetAuthorName(id);
+            if (name != null)
             {
-                return Json(name);    
+                return Json(name);
             }
 
-            return NotFound( );
-
+            return NotFound();
         }
-        
+
         [HttpGet("subs/{id:int}")]
         public ActionResult<IEnumerable<string>> GetSubList(int id)
         {
-            var subs = _dataManager.GetSubList( id );
-            if ( subs != null )
+            var subs = _dataManager.GetSubList(id);
+            if (subs != null)
             {
-                return Json(subs);    
+                return Json(subs);
             }
 
-            return NotFound( );
-
+            return NotFound();
         }
 
 
         [HttpPost("users/{name}/posts")]
-        public ActionResult<IEnumerable<string>> CreatePost(string name ,[FromBody] PostForCreation postForCreation)
+        public ActionResult<IEnumerable<string>> CreatePost(string name, [FromBody] PostForCreation postForCreation)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var idOfUser = _dataManager.GetUserId( name );
+            var idOfUser = _dataManager.GetUserId(name);
             if (_dataManager.TryCreatePost(postForCreation, idOfUser))
             {
                 return Ok();
@@ -219,7 +217,7 @@ namespace PadLabN1.Controllers
 
             return BadRequest();
         }
-        
+
         [HttpPost("subs")]
         public ActionResult<IEnumerable<string>> CreatePost([FromBody] SubForCreation subForCreation)
         {
@@ -228,30 +226,29 @@ namespace PadLabN1.Controllers
                 return BadRequest(ModelState);
             }
 
-            if( _dataManager.TryAddSub( subForCreation ) )
+            if (_dataManager.TryAddSub(subForCreation))
             {
                 return Ok();
             }
 
             return BadRequest();
         }
-        
+
 
         [HttpDelete("subs/{subId:int}/{subOnId:int}")]
         public ActionResult<IEnumerable<string>> DeleteSub(int subId, int subOnId)
         {
-            if(subId == null || subOnId == null)
+            if (subId == null || subOnId == null)
             {
                 return BadRequest();
             }
 
-            if (_dataManager.TryDeleteSub( subId, subOnId ))
+            if (_dataManager.TryDeleteSub(subId, subOnId))
             {
                 return Ok();
             }
 
             return BadRequest();
         }
-        
     }
 }

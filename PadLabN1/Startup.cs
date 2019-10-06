@@ -36,6 +36,8 @@ namespace PadLabN1
             services.AddMvc( ).SetCompatibilityVersion( CompatibilityVersion.Version_2_2 );
             services.AddTransient<IDataManager, DbDataManager>( );
             services.AddTransient<MessageController>( );
+            services.AddTransient<MessageHub>();
+
             services.AddCors( options =>
                 options.AddPolicy( "Allow any", x =>
                 {
