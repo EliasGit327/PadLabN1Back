@@ -179,7 +179,7 @@ namespace PadLabN1.Services
                 return false;
             }
 
-            _msgController.Post(postToAdd, GetAuthorName(postToAdd.UserId));
+            _msgController.Post(postToAdd, this);
             return true;
         }
 

@@ -67,7 +67,6 @@ namespace PadLabN1.Controllers
             return Ok(user);
         }
 
-
         [HttpGet("users/{id:int}")]
         public ActionResult<IEnumerable<string>> GetSpecificUser(int id)
         {
